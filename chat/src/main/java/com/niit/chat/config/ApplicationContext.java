@@ -17,6 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.chat.model.Friend;
 import com.niit.chat.model.Job;
+import com.niit.chat.model.BlogComment;
+import com.niit.chat.model.BlogPost;
 import com.niit.chat.model.FileUpload;
 import com.niit.chat.model.User;
 
@@ -61,6 +63,10 @@ public class ApplicationContext
 		sessionBuilder.addAnnotatedClass(Job.class);
 		sessionBuilder.addAnnotatedClass(FileUpload.class);
 		sessionBuilder.addAnnotatedClass(Friend.class);
+		sessionBuilder.addAnnotatedClass(BlogPost.class);
+		sessionBuilder.addAnnotatedClass(BlogComment.class);
+		
+		
 
 		//sessionBuilder.addAnnotatedClass(UserDetails.class);
 		System.out.println("connected");

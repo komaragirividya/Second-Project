@@ -35,7 +35,7 @@ private SessionFactory sessionFactory;
 		Friend friend=new Friend();
 		friend.setFromId(from);
 		friend.setToId(to);
-		friend.setStatus('A');
+		friend.setStatus('P');
 		session.save(friend);
 		/*session.flush();
 		session.close();*/
@@ -51,7 +51,7 @@ private SessionFactory sessionFactory;
 		query.setString(0, username);
 		query.setCharacter(1, 'P');
 		List<Friend> pendingRequest=query.list();
-		session.close();
+		/*session.close();*/
 		return pendingRequest;
 	}
 	@Override

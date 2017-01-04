@@ -16,6 +16,7 @@ com\niit\chat\model\Friend.class
 com\niit\chat\dao\JobDaoImpl.class
 com\niit\chat\model\FileUpload.class
 com\niit\chat\config\ApplicationContext.class
+com\niit\chat\test\FriendTest.class
 com\niit\chat\model\Error.class
 com\niit\chat\test\FileUploadTest.class
 com\niit\chat\controller\FriendController.class

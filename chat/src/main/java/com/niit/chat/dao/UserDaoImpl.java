@@ -92,18 +92,19 @@ public class UserDaoImpl implements UserDao
 				
 	}
 	
-	@Override
+	@Transactional
 	public List<User> getAllUsers(User user) {
-		Session session=sessionFactory.openSession();
-		SQLQuery query=session.createSQLQuery(
-	"select * from users where username in (select username from users where username!=? minus(select to_id from friend where from_id=? union select from_id from friend where to_id=?))");
-		query.setString(0, user.getUsername());
-		query.setString(1, user.getUsername());
-		query.setString(2, user.getUsername());
-		query.addEntity(User.class);
-		List<User> users=query.list();
-		System.out.println(users);
-		session.close();
-		return users;
+	Session session=sessionFactory.getCurrentSession();
+	//SQL QUERY
+	SQLQuery query=session.createSQLQuery(
+	"select * from users where username in (select username from users where username!=? minus(select to_id from friend where from_id=? and status!='D' union select from_id from friend where to_id=? and status!='D'))");
+	query.setString(0, user.getUsername());
+	query.setString(1, user.getUsername());
+	query.setString(2, user.getUsername());
+	query.addEntity(User.class);
+	List<User> users=query.list();// list of users to whom 'smith' can send a friend request
+	System.out.println(users);
+	/*session.close();*/
+	return users;
 	}
 }

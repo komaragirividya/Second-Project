@@ -42,4 +42,18 @@ app.config(function($routeProvider){
 		templateUrl:'user/listOfUsers.html'
 		
 	})
+	
+	
+	.when('/addPost',{
+		controller:'BlogController',
+		templateUrl:'blog/newPost.html'
+	})
+	.when('/getAllBlogs',{
+		controller:'BlogController',
+		templateUrl:'blog/blogList.html'
+	})
+       .when('/getBlogDetail/:id',{
+		controller:'BlogDetailController',
+		templateUrl:'blog/getBlogDetail.html'
+	})
 })
