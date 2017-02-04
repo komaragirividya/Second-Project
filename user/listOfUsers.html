@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{
+		background: url(imagee/1.jpg) center center fixed no-repeat;
+		background-size:cover;
+		
+	}
+	</style>
+</head>
+
+<body>
+<div class="w3-container">
+  <br>
+  <br>
+  <h1>List of Users</h1>
+  <table class="w3-table">
+    <tr>
+      <th>USERNAME</th>
+      <th>EMAIL</th>
+      <th>ISONLINE</th>
+      <th>ROLE</th>
+    </tr>
+    <tr ng-repeat="u in users">
+      <td>{{u.username}}</td>
+<td>{{u.email}}</td>
+<td ng-if="u.online">Yes</td>
+<td ng-if="!u.online">No</td>
+
+<td>{{u.role}}</td>
+<td><a href="" ng-click="friendRequest(u.username)" class="btn btn-xs btn-primary" >Send Friend Request</a></td>
+    </tr>
+   
+  </table>
+</div>
+</body>
+</html>

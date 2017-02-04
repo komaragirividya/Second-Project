@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+	<style>
+	.circle{
+	border-radius: 50%/50%;
+	width:50px;
+	height:50px;
+	background:black;}
+	
+	body
+{
+	background-image: url(imagee/blog.jpg);
+}
+	
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body>
+
+<div class="col-xs-4">
+<font color="red"><strong>Search By Title:</strong></font>
+<input type="text" class="form-control" ng-model="search.title">
+</div>
+<div class="col-xs-4">
+<font color="red"><strong>Search By Author</strong></font>
+<input type="text" class="form-control" ng-model="search.createdBy.username">
+</div>
+<br><br>
+<br><br>
+<div class="w3-container w3-twothird">
+  
+  
+  <div class="w3-panel w3-card-8" ng-repeat="blogPost in blogPosts | orderBy:'date':true | filter:search">
+  
+  <font color="red"><h2>{{blogPost.title}}</h2></font>
+ <font color="blue"> <p class="text-right">By {{blogPost.createdBy.username}}</p></font>
+    <em><strong><font color="White"><p>{{blogPost.body}}</p></font></strong></em>
+     <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i>{{blogPost.createdOn | date:'MM/dd/yyyy HH:mm'}} </span></li>
+            <li>|</li>
+            
+
+
+
+            <li>|</li>
+           <!--  <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            Use Font Awesome http://fortawesome.github.io/Font-Awesome/
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li> -->
+			</ul>
+  </div>
+</div>
+
+
+</body>
+</html>

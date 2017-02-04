@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{
+		background: url(imagee/1.jpg) center center fixed no-repeat;
+		background-size:cover;
+		
+	}
+	</style>
+</head>
+<body>
+<div class="w3-container">
+<table class="w3-table">
+<tr ng-repeat="f in friends">
+<td>{{f.fromId}}</td>
+<td>{{f.toId}}</td>
+<td><a href="#/chat" ng-click="" class="btn btn-primary">chat</a></td>
+</tr>
+</table>
+</div>
+
+</body>

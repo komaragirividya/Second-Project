@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+ <style>
+   body{
+		background: url(imagee/job.jpg) center center fixed no-repeat;
+		background-size:cover;
+		}	
+ p
+ {
+ padding-top:10px;
+    font-family:Trebuchet;
+ }
+ 
+ 
+  
+  </style>
+  
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel='stylesheet' href='typhicon/typhicons.min.css' />
+<body>
+
+
+<div class="w3-container w3-twothird">
+  <span aria-hidden="true" class="typcn typcn-briefcase fa-3x" style="color:green">Posted Jobs..</span>
+  <ul class="w3-ul w3-card-2" ng-repeat="j in jobs">
+       <li class="w3-padding-8">
+      <span onclick="this.parentElement.style.display='none'" 
+      class="w3-closebtn w3-padding w3-margin-right w3-medium">&times;</span>
+     
+      <span class="w3-xlarge"><h1>{{j.jobTitle}}</h1></span>
+      <span class="w3-large"><em><h3>Description:{{j.jobDescription}}</h3></em></span>
+      <span><small>SKILLS:</small>{{j.skillsRequired}}</span><br>
+      <span><span class="glyphicon glyphicon-map-marker"></span>{{j.location}}</span>
+      <span>-<i class="fa fa-inr" style="font-size:24px"></i>{{j.salary}}</span>
+      <button type="button" class="btn btn btn-primary"  ng-click="applied()">Apply</button>
+    </li>
+  
+  </ul>
+</div>
+</body>
+
+</html>

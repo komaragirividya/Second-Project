@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet" />
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+	rel="stylesheet" />
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	
+	<style>
+	
+	/* USER PROFILE PAGE */
+ .card {
+    margin-top: 20px;
+    padding: 30px;
+    background-color: rgba(214, 224, 226, 0.2);
+    -webkit-border-top-left-radius:5px;
+    -moz-border-top-left-radius:5px;
+    border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-top-right-radius:5px;
+    border-top-right-radius:5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.card.hovercard {
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 1);
+}
+.card.hovercard .card-background {
+    height: 130px;
+}
+.card-background img {
+    -webkit-filter: blur(25px);
+    -moz-filter: blur(25px);
+    -o-filter: blur(25px);
+    -ms-filter: blur(25px);
+    filter: blur(25px);
+    margin-left: -100px;
+    margin-top: -200px;
+    min-width: 130%;
+}
+.card.hovercard .useravatar {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+}
+.card.hovercard .useravatar img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+.card.hovercard .card-info {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+}
+.card.hovercard .card-info .card-title {
+    padding:0 5px;
+    font-size: 20px;
+    line-height: 1;
+    color: #262626;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.card.hovercard .card-info {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+    text-overflow: ellipsis;
+}
+.card.hovercard .bottom {
+    padding: 0 20px;
+    margin-bottom: 17px;
+}
+.btn-pref .btn {
+    -webkit-border-radius:0 !important;
+}
+
+	
+body{
+		background: url(imagee/oo.jpg) center center fixed no-repeat;
+		background-size:cover;
+		
+	}
+	.well {
+   background-color: rgba(245, 245, 245, 0.4);
+}
+	</style>
+</head>
+<body>
+ <div class="col-lg-12 col-sm-12">
+    <div class="card hovercard" ng-show="currentUser.id">
+        <div class="card-background">
+            <img class="card-bkimg" alt="" src="imagee/{{currentUser.username}}">
+            <!-- http://lorempixel.com/850/280/people/9/ -->
+        </div>
+        
+        <div class="useravatar">
+            <img alt="" src="imagee/{{currentUser.username}}">
+        </div>
+        <div class="card-info"> <span class="card-title">{{currentUser.username}}</span>
+
+        </div>
+    </div>
+   
+
+        <div class="well">
+      <div class="row text-center">
+      <p><em>Logged in as:{{currentUser.role}}</em></p>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="imagee/jobs1.jpg" alt="Paris">
+      <br>
+      <p><strong>Jobs</strong></p>
+      
+      <button type="button" class="btn btn-primary"><a href="#/getAllJobs" ng-hide="currentUser.role=='ADMIN' || currentUser.role=='EMPLOYEE'"> View and Apply</a><a href="#/postJob" 
+			 ng-show="currentUser.role=='ADMIN' || currentUser.role=='EMPLOYEE'">Post Job</a></button>
+      
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="imagee/person.jpg" alt="New York">
+      <br>
+      <p><strong>Bloging</strong></p>
+     
+      <button type="button" class="btn btn-primary"><a href="#/getAllBlogs"> POST</a></button>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="imagee/ff.jpg" alt="San Francisco">
+      <br>
+      <p><strong>Make Friends</strong></p>
+      
+      <button type="button" class="btn btn-primary"><a href="#/getAllUsers">Add Friends</a></button>
+    </div>
+  </div>
+</div>
+    </div>
+    
+    </div>
+            
+    
+      </body>
+      </html>

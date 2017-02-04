@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <style>
+  body{
+		background: url(imagee/pj.jpg) center center fixed no-repeat;
+		background-size:cover;
+		
+	}
+  
+  </style>
+  
+
+</head>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body>
+<div class="w3-container w3-twothird">
+  
+  
+  <div class="w3-card-4">
+    <div class="w3-container w3-green">
+      <em><h2>Post Your Job</h2></em>
+    </div>  
+<form class="w3-container ">
+ <br>
+ <br>
+  <p>      
+  <input class="w3-input" type="text" ng-model="job.jobTitle" name="jobtitle" required>
+  <label class="w3-label w3-validate">Job Title</label></p>
+  <p>      
+  <input class="w3-input" type="text" ng-model="job.jobDescription" name="jobdescription" required>
+  <label class="w3-label w3-validate">Description</label></p>
+  <p>      
+  <input class="w3-input" type="text" ng-model="job.skillsRequired" name="skills" required>
+  <label class="w3-label w3-validate">Skills</label></p>
+  <p>      
+  <input class="w3-input" type="text" ng-model="job.salary" name="salary" required>
+  <label class="w3-label w3-validate">Salary</label></p>
+  <p>      
+  <input class="w3-input" type="text" ng-model="job.location" name="location" required>
+  <label class="w3-label w3-validate">Location</label></p>
+  <p>      
+  <button class="w3-btn w3-teal" value="Post Job" ng-click="saveJob()">Post</button></p>
+</form>
+</div>
+</div>
+
+
+</body>
+</html>

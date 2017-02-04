@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<style>
+  body{
+		background: url(imagee/mm.jpg) center center fixed no-repeat;
+		background-size:cover;
+		
+	}
+	</style>
+<body>
+
+
+<div class="w3-container w3-half">
+  <h1>PENDING REQUESTS</h1>
+  <ul class="w3-ul w3-card-4" ng-repeat="p in pendingRequest">
+    <li class="w3-padding-8">
+      <span onclick="this.parentElement.style.display='none'" 
+      class="w3-closebtn w3-padding w3-margin-right w3-medium">&times;</span>
+     
+      <span class="w3-xlarge"><h2>{{p.fromId}}</h2></span>
+      <span><a href="" ng-click="updatePendingRequest(p.fromId,'A')" class="btn btn-primary">Accept</a></span>
+      <span><a href="" ng-click="updatePendingRequest(p.fromId,'D')" class="btn btn-warning">Deny</a></span>
+    </li>
+  
+  </ul>
+</div>
+</body>
+</html> 
